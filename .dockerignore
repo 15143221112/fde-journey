@@ -1,0 +1,12 @@
+# 构建上下文忽略项：避免把本机依赖/数据/构建产物带进镜像
+node_modules
+**/node_modules
+frontend/dist
+**/.venv
+**/__pycache__
+backend/data
+backend/uploads
+*.db
+*.pyc
+.git
+home_preview.png

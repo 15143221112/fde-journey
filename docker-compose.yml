@@ -1,0 +1,18 @@
+# FDE 每日学习卡片工具 —— 一键启动
+# 用法：docker compose up -d   （打开 http://localhost:8000 ）
+services:
+  fde:
+    build: .
+    image: fde-learning-tool:latest
+    container_name: fde-learning
+    ports:
+      - "8000:8000"
+    volumes:
+      # SQLite 数据与上传文件持久化到宿主机
+      - ./backend/data:/app/backend/data
+      - ./backend/uploads:/app/backend/uploads
+    environment:
+      - DB_PATH=/app/backend/data/fde.db
+      - UPLOAD_DIR=/app/backend/uploads
+      - TZ=Asia/Shanghai
+    restart: unless-stopped

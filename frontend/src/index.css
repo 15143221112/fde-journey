@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+code, pre, .mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+
+/* 简易 markdown 渲染样式（笔记） */
+.md-note h1, .md-note h2, .md-note h3 { @apply font-bold text-navy-800 mt-3 mb-1 text-base; }
+.md-note h1 { @apply text-lg; }
+.md-note ul, .md-note ol { @apply list-disc pl-5 my-1; }
+.md-note ol { list-style: decimal; }
+.md-note li { @apply my-0.5; }
+.md-note p { @apply my-1; }
+.md-note code { @apply bg-slate-100 px-1 rounded text-[0.85em] text-rose-600; }
+.md-note pre { @apply bg-slate-900 text-slate-100 p-3 rounded-lg overflow-x-auto my-2 text-sm; }
+.md-note pre code { @apply bg-transparent text-slate-100 px-0; }
+.md-note strong { @apply font-bold; }
+.md-note blockquote { @apply border-l-4 border-slate-300 pl-3 my-2 text-slate-600; }
+
+/* 资料卡片代码块 */
+.code-block { @apply bg-slate-900 text-slate-100 p-3 rounded-lg overflow-x-auto my-1 text-xs; }
+
+/* 热力图格子 */
+.heat-cell { @apply w-3.5 h-3.5 rounded-[3px]; }
+
+/* 底部导航安全区 */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
